@@ -2,6 +2,7 @@
 from models.base_model import BaseModel
 """Module that define Review class that inherits from BaseModel."""
 
+
 class Review(BaseModel):
     """Review class that inherits from BaseModel."""
     place_id = ""
