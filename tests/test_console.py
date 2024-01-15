@@ -8,7 +8,7 @@ from console import HBNBCommand
 
 
 class TestHBNBCommand(unittest.TestCase):
-""" Test class of hbnb """
+    """ Test class of hbnb """
 
     @patch('sys.stdout', new_callable=StringIO)
     def assert_stdout(self, expected_output, func, *args, **kwargs):
