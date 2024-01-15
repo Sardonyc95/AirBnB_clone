@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from models.base_model import BaseModel
 """Module that define Review class that inherits from BaseModel."""
+from models.base_model import BaseModel
 
 
 class Review(BaseModel):
