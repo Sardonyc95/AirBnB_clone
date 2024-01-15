@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-"""Module containing the FileStorage class for serialization/deserialization."""
+"""Module contain the FileStorage class for serialization/deserialization."""
 
 import json
 import os
 
+
 class FileStorage:
     """
-    The FileStorage class for serializing instances to a JSON file and deserializing from a JSON file.
+    The FileStorage class for serializing instances to a JSON file
+    and deserializing from a JSON file.
 
     Private class attributes:
     - __file_path: string - path to the JSON file (ex: file.json)
-    - __objects: dictionary - empty but will store all objects by <class name>.id
+    - __objects: dictionary - empty but will store objects by <class name>.id
 
     Public instance methods:
     - all(self): returns the dictionary __objects
@@ -35,7 +37,8 @@ class FileStorage:
 
     def save(self):
         """Serialize __objects to the JSON file (path: __file_path)."""
-        save_dict = {key: obj.to_dict() for key, obj in self.__objects.items()}
+        save_dict = {
+                key: obj.to_dict() for key, obj in self.__objects.items()}
         with open(self.__file_path, 'w', encoding='utf-8') as file:
             json.dump(save_dict, file)
 
