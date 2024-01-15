@@ -5,18 +5,23 @@ import uuid
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """
     The BaseModel class for creating instances with common attributes/methods.
 
     Public instance attributes:
     - id: string - assign with a uuid when an instance is created
-    - created_at: datetime - assign with the current datetime when an instance is created
-    - updated_at: datetime - assign with the current datetime when an instance is created and updated when modified
+    - created_at: datetime - assign with the current datetime when
+    an instance is created
+    - updated_at: datetime - assign with the current datetime when
+    an instance is created and updated when modified
 
     Public instance methods:
-    - save(self): updates the public instance attribute updated_at with the current datetime
-    - to_dict(self): returns a dictionary containing all keys/values of __dict__ of the instance
+    - save(self): updates the public instance attribute updated_at
+    with the current datetime
+    - to_dict(self): returns a dictionary containing all keys/values
+    of __dict__ of the instance
     """
 
     def __init__(self, *args, **kwargs):
@@ -48,8 +53,8 @@ class BaseModel:
 
     def __str__(self):
         """Return a string representation of the instance."""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
-
+        return "[{}] ({}) {}".format(
+                self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         self.updated_at = datetime.now()
