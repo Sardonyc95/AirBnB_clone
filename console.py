@@ -14,11 +14,13 @@ from models.city import City
 from models.place import Place
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """Command interpreter class."""
-    
+
     prompt = "(hbnb) "
-    valid_classes = ["BaseModel", "User", "Place", "State", "Amenity", "City", "Review"]
+    valid_classes =
+    ["BaseModel", "User", "Place", "State", "Amenity", "City", "Review"]
 
     def do_quit(self, arg):
         """Quit command to exit the program."""
@@ -101,7 +103,9 @@ class HBNBCommand(cmd.Cmd):
         if class_name not in self.valid_classes:
             print("** class doesn't exist **")
             return
-        print([str(all_objects[key]) for key in all_objects if key.startswith(class_name)])
+        print([
+            str(all_objects[key]) for key in all_objects
+            if key.startswith(class_name)])
 
     def do_update(self, arg):
         """Update an instance based on the class name and id."""
@@ -138,6 +142,6 @@ class HBNBCommand(cmd.Cmd):
         setattr(instance, attribute_name, attribute_value)
         instance.save()
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
