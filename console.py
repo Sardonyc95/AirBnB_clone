@@ -19,8 +19,9 @@ class HBNBCommand(cmd.Cmd):
     """Command interpreter class."""
 
     prompt = "(hbnb) "
-    valid_classes =
-    ["BaseModel", "User", "Place", "State", "Amenity", "City", "Review"]
+    valid_classes = [
+            "BaseModel", "User", "Place",
+            "State", "Amenity", "City", "Review"]
 
     def do_quit(self, arg):
         """Quit command to exit the program."""
